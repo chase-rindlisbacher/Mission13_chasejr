@@ -1,25 +1,24 @@
 import { useState } from 'react';
-import data from "./MovieDataSample.json";
+import data from "./MovieData.json";
 
-const moviesampledata = data.MovieDataSample;
+const moviesampledata = data.MovieData;
 
 function MovieList() {
     const [listOMovies, setListOMovies] = useState(moviesampledata);
-    const addMovie = () => {
-        setListOMovies(
-            [
-                ...moviesampledata,
-                {
-                    "MovieId":6,
-                    "Category": "Action/Adventure",
-                    "Title": "Batman Returns",
-                    "Year": 1992,
-                    "Director": "Tim Burton",
-                    "Rating": "PG-13"
-                }
-            ]
-        )
-    };
+    // const addMovie = () => {
+    //     setListOMovies(
+    //         [
+    //             ...moviesampledata,
+    //             {
+    //                 "Category": "Action/Adventure",
+    //                 "Title": "Batman Returns",
+    //                 "Year": 1992,
+    //                 "Director": "Tim Burton",
+    //                 "Rating": "PG-13"
+    //             }
+    //         ]
+    //     )
+    // };
     return(
         <>
             <div>
@@ -39,7 +38,7 @@ function MovieList() {
                     </thead>
                     <tbody>
                         {listOMovies.map((m) => (
-                            <tr key={m.MovieId}>
+                            <tr>
                                 <td>{m.Title}</td>
                                 <td>{m.Year}</td>
                                 <td>{m.Director}</td>
@@ -49,7 +48,7 @@ function MovieList() {
                         ))}           
                     </tbody>
                 </table>
-                <button className="btn btn-primary" onClick={addMovie}>Add Movie</button>
+                {/* <button className="btn btn-primary" onClick={addMovie}>Add Movie</button> */}
             </div>
         </>
     );
