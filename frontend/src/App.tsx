@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
-import logo from './logo.svg';
 import './App.css';
 import TopBanner from "./Top";
-import MovieList from './Movies';
+import {MovieList} from './movie/MovieList';
 import PodcastLink from './Podcast';
 
 
@@ -19,7 +18,7 @@ function App() {
           </nav>
           <Routes>
             <Route path="/" Component={TopBanner} />
-            <Route path="/movies" Component={MovieList} />
+            <Route path="/movies" element={<MovieList />} />
             <Route path="/podcasts" Component={PodcastLink} />
           </Routes>
         </div>
